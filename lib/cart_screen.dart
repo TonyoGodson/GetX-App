@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'cart_products.dart';
+import 'catalog_products.dart';
 import 'catalogue_screen.dart';
 import 'home.dart';
 class CartScreen extends StatefulWidget {
@@ -25,7 +27,8 @@ class _CartScreenState extends State<CartScreen> {
           child: Center(
             child: Column(
               children: [
-                // CatalogProducts(),
+                CartProducts(),
+                // CartTotal(),
                 // ElevatedButton(
                 //     onPressed: ()  => Get.to(() => CartScreen()),
                 //     child: Text("Go to Cart"))
