@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'cart_products.dart';
+import 'cart_total.dart';
 import 'catalog_products.dart';
 import 'catalogue_screen.dart';
 import 'home.dart';
@@ -25,14 +26,16 @@ class _CartScreenState extends State<CartScreen> {
             Icons.arrow_back_ios, ),)),
       body: SafeArea(
           child: Center(
-            child: Column(
-              children: [
-                CartProducts(),
-                // CartTotal(),
-                // ElevatedButton(
-                //     onPressed: ()  => Get.to(() => CartScreen()),
-                //     child: Text("Go to Cart"))
-              ],),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    CartProducts(),
+                    CartTotal(),
+                    // ElevatedButton(
+                    //     onPressed: ()  => Get.to(() => CartScreen()),
+                    //     child: Text("Go to Cart"))
+                  ],),
+              ),
           )),
     );
   }

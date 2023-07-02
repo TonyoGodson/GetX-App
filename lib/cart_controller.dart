@@ -20,11 +20,22 @@ class CartController extends GetxController{
      );
    }
 
-//  void removeProduct(){}
+  void removeProduct(Product product){
+     if(_products.containsKey(product) && _products[product] == 1){
+       _products.removeWhere((key, value) => key == product);
+     }
+     else _products[product] -= 1;
+  }
 
   get products => _products;
 
-//  void productSubTotal(){}
+  get productSubTotal => _products.entries
+      .map((product) => product.key.price * product.value)
+      .toList();
 
-//  void total(){}
+  get total => _products.entries
+      .map((product) => product.key.price * product.value)
+      .toList()
+      .reduce((value, element) => value + element)
+      .toStringAsFixed(2);
 }

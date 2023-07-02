@@ -8,6 +8,7 @@ class CartProductCard extends StatelessWidget {
   final Product product;
   final int quantity;
   final int index;
+
   CartProductCard({
     Key? key,
     required this.controller,
@@ -18,18 +19,26 @@ class CartProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: 20),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Image(
-            height: 70,
-              width: 120,
+    return Padding(padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image(
+              height: 70, 
+              width: 120, 
               image: NetworkImage(product.imageUrl)),
-        )
-      ],
-    ),);
+          const SizedBox(width: 10),
+          Expanded(child: Text(product.name)),
+          IconButton(onPressed: () {
+            controller.removeProduct(product);
+          }, icon: Icon(Icons.remove_circle)),
+          Text("$quantity"),
+          IconButton(onPressed: () {
+            controller.addProduct(product);
+          }, icon: Icon(Icons.add_circle)),
+        ],
+    )
+    ,
+    );
   }
 }
