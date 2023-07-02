@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_cart/cart_controller.dart';
 import 'package:getx_cart/model/products.dart';
+import 'package:getx_cart/product_detail_screen.dart';
 
 class CatalogProductCard extends StatelessWidget {
 
@@ -16,12 +17,17 @@ class CatalogProductCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Image(
-            // radius: 50,
-            // backgroundImage:
-            height: 70,
-            width: 120,
-            image: NetworkImage(Product.products[index].imageUrl),
+          GestureDetector(
+            onTap: (){
+              Get.to(() => ProductDetailScreen());
+            },
+            child: Image(
+              // radius: 50,
+              // backgroundImage:
+              height: 70,
+              width: 120,
+              image: NetworkImage(Product.products[index].imageUrl),
+            ),
           ),
           SizedBox(width: 10),
           Expanded(child: Text(Product.products[index].name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),),),
