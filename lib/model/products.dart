@@ -40,5 +40,35 @@ class Product{
         price: 2.99,
         imageUrl: 'https://thumbs.dreamstime.com/z/star-apple-cut-half-white-background-isolated-99551522.jpg'
     ),
+    Product(
+        name: 'Pineapple',
+        price: 2.99,
+        imageUrl: 'https://thumbs.dreamstime.com/z/fresh-slice-pineapple-8507669.jpg'
+    ),
+    Product(
+        name: 'Banana',
+        price: 2.99,
+        imageUrl: 'https://thumbs.dreamstime.com/z/banana-fruits-24642880.jpg'
+    ),
+    Product(
+        name: 'Tangerine',
+        price: 2.99,
+        imageUrl: 'https://thumbs.dreamstime.com/z/fresh-whole-tangerine-some-slices-18216556.jpg'
+    ),
+    Product(
+        name: 'Velvet Tamarind',
+        price: 2.99,
+        imageUrl: 'https://thumbs.dreamstime.com/z/velvet-tamarind-fruit-isolated-white-velvet-tamarind-fruit-isolated-white-background-139934922.jpg'
+    ),
+    Product(
+        name: 'Water Melon',
+        price: 2.99,
+        imageUrl: 'https://thumbs.dreamstime.com/z/water-melon-cut-up-pieces-39106096.jpg'
+    ),
+    Product(
+        name: 'Guava',
+        price: 2.99,
+        imageUrl: 'https://thumbs.dreamstime.com/z/guava-fruit-leaves-isolated-white-background-89872885.jpg'
+    ),
   ];
 }
