@@ -31,9 +31,6 @@ class _CartScreenState extends State<CartScreen> {
                   children: [
                     CartProducts(),
                     CartTotal(),
-                    // ElevatedButton(
-                    //     onPressed: ()  => Get.to(() => CartScreen()),
-                    //     child: Text("Go to Cart"))
                   ],),
               ),
           )),

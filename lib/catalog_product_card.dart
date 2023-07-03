@@ -5,9 +5,11 @@ import 'package:getx_cart/model/products.dart';
 import 'package:getx_cart/product_detail_screen.dart';
 
 class CatalogProductCard extends StatelessWidget {
-
+  final  controller = Get.put(CartController());
   final cartController = Get.put(CartController());
   final int index;
+  // final int quantity;
+  // final Product product;
   CatalogProductCard({Key? key, required this.index}) : super(key: key);
 
   @override
@@ -19,7 +21,10 @@ class CatalogProductCard extends StatelessWidget {
           children: [
           GestureDetector(
             onTap: (){
-              Get.to(() => ProductDetailScreen());
+              Get.to(() => ProductDetailScreen( controller: controller,
+                product: controller.products.keys.toList()[index],
+                quantity: controller.products.values.toList()[index],
+                index: index,));
             },
             child: Image(
               // radius: 50,
@@ -30,7 +35,9 @@ class CatalogProductCard extends StatelessWidget {
             ),
           ),
           SizedBox(width: 10),
-          Expanded(child: Text(Product.products[index].name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),),),
+          Expanded(child: Text(
+            Product.products[index].name,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),),),
           SizedBox(width: 10),
           Expanded(child: Text("${Product.products[index].price}")),
             IconButton(onPressed: () {

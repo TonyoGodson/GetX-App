@@ -20,7 +20,7 @@ class CartTotal extends StatelessWidget {
                 fontWeight: FontWeight.bold
             ),
           ),
-          Text("${controller.total}",
+            Text("${controller.total}",
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold

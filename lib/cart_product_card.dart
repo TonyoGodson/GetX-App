@@ -37,8 +37,7 @@ class CartProductCard extends StatelessWidget {
             controller.addProduct(product);
           }, icon: Icon(Icons.add_circle)),
         ],
-    )
-    ,
+    ),
     );
   }
 }
